@@ -6,17 +6,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitrepo
-  targetRevision: HEAD
-  path: argo
-
+    repoURL: https://github.com/Kristof-oe/argocd_szakd.git
+    targetRevision: HEAD
+    path: karpenter
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
 
   syncPolicy:
     syncOptions:
-      -
+      - CreateNamespace=true
 
     automated:
       selfHeal: true
